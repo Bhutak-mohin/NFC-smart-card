@@ -1,0 +1,238 @@
+.module {
+  padding: 8rem 0;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.reverse .container {
+  flex-direction: row-reverse;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.content {
+  flex: 1;
+  max-width: 550px;
+}
+
+.iconWrapper {
+  width: 50px;
+  height: 50px;
+  background: hsla(var(--primary), 0.1);
+  color: hsl(var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.description {
+  font-size: 1.125rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 2.5rem;
+  line-height: 1.6;
+}
+
+.detailsList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+}
+
+.checkWrapper {
+  width: 20px;
+  height: 20px;
+  background: hsla(var(--primary), 0.1);
+  color: hsl(var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visualBox {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 16/10;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 32px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, hsla(var(--primary), 0.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.visualIcon {
+  color: hsla(var(--primary), 0.2);
+}
+
+/* --- Visual Box Cards --- */
+.visualBoxCards {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 1/1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.paperCard {
+  position: absolute;
+  width: 250px;
+  aspect-ratio: 1.586 / 1;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+}
+
+.paperLine {
+  height: 8px;
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+/* --- Visual Box Phone/Digital --- */
+.visualBoxPhone {
+  width: 100%;
+  max-width: 450px;
+  aspect-ratio: 16/10;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glowPhone {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, hsla(var(--primary), 0.15) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.digitalCard {
+  width: 260px;
+  aspect-ratio: 1 / 1.586;
+  background: var(--glass);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), inset 0 0 20px hsla(var(--primary), 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.digitalHeader {
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsla(var(--primary), 0.5));
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+}
+
+.digitalAvatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, hsl(var(--primary)), hsla(var(--primary), 0.3));
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 20px hsla(var(--primary), 0.3);
+  z-index: 1;
+}
+
+.digitalLines {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1;
+}
+
+.digitalLine {
+  height: 10px;
+  background: hsla(var(--primary), 0.2);
+  border-radius: 5px;
+}
+
+.digitalZapIcon {
+  position: absolute;
+  bottom: 2rem;
+  color: hsl(var(--primary));
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px hsl(var(--primary)));
+}
+
+@media (max-width: 1024px) {
+  .title { font-size: 2.5rem; }
+  .container { flex-direction: column !important; text-align: center; gap: 4rem; }
+  .content { max-width: 100%; }
+  .iconWrapper { margin: 0 auto 2rem; }
+  .detailsList { justify-items: center; }
+}
+
+@media (max-width: 768px) {
+  .title { font-size: 2rem; }
+  .visualBox { aspect-ratio: 1/1; }
+}

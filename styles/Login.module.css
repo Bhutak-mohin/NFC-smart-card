@@ -1,0 +1,83 @@
+.loginPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 20px 60px;
+  background: radial-gradient(circle at 50% 50%, hsla(var(--primary), 0.05) 0%, transparent 50%);
+}
+
+.loginCard {
+  width: 100%;
+  max-width: 450px;
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  padding: 3rem;
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.iconWrapper {
+  width: 60px;
+  height: 60px;
+  background: hsla(var(--primary), 0.1);
+  color: hsl(var(--primary));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  margin: 0 auto 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 3rem;
+}
+
+.googleBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: white;
+  color: #111;
+  border: none;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.googleBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(255, 255, 255, 0.2);
+}
+
+.googleIcon {
+  width: 20px;
+  height: 20px;
+}
+
+.footer {
+  margin-top: 3rem;
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.footer a {
+  color: hsl(var(--primary));
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}

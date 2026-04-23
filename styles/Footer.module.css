@@ -1,0 +1,30 @@
+.footer {
+  padding: 3rem 0;
+  border-top: 1px solid hsla(var(--border), 0.5);
+  margin-top: 5rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+}
+
+.links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.links a:hover {
+  color: hsl(var(--foreground));
+}
+
+@media (max-width: 640px) {
+  .content {
+    flex-direction: column;
+    gap: 1.5rem;
+    text-align: center;
+  }
+}

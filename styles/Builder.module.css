@@ -1,0 +1,234 @@
+.builderPage {
+  padding: 120px 0;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.layout {
+  display: flex;
+  gap: 4rem;
+  align-items: stretch;
+}
+
+.formContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  min-width: 0; /* Prevent flex blowout */
+}
+
+.section {
+  background: hsla(var(--foreground), 0.03);
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid hsla(var(--border), 0.5);
+}
+
+.section h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: hsl(var(--foreground));
+}
+
+.inputGroup {
+  margin-bottom: 1.25rem;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 0.85rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup input, .section textarea {
+  width: 100%;
+  background: hsla(var(--background), 0.5);
+  border: 1px solid hsla(var(--border), 0.5);
+  color: hsl(var(--foreground));
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.inputGroup input:focus, .section textarea:focus {
+  border-color: hsl(var(--primary));
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.saveBtn {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: 1rem;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  margin-top: 1rem;
+}
+
+.saveBtn:hover {
+  transform: translateY(-2px);
+}
+
+.previewContainer {
+  width: 400px;
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+  top: 100px;
+  z-index: 10;
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.sticky h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.previewHint {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: hsl(var(--muted-foreground));
+  text-align: center;
+}
+
+.themeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 1rem;
+}
+
+.themeBtn {
+  background: hsla(var(--background), 0.5);
+  border: 1px solid hsla(var(--border), 0.5);
+  color: hsl(var(--foreground));
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  transition: all 0.2s;
+}
+
+.themeBtn:hover {
+  background: hsla(var(--foreground), 0.05);
+}
+
+.activeTheme {
+  border-color: hsl(var(--primary));
+  background: hsla(var(--primary), 0.05);
+}
+
+.themeCircle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--theme-bg);
+  border: 3px solid var(--theme-accent);
+}
+
+.styleOptions {
+  display: flex;
+  gap: 1rem;
+}
+
+.styleBtn {
+  flex: 1;
+  padding: 0.75rem;
+  background: transparent;
+  border: 1px solid hsla(var(--border), 0.5);
+  color: hsl(var(--foreground));
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.activeStyle {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+}
+
+.linkSection {
+  background: hsla(var(--primary), 0.05);
+  border: 1px solid hsla(var(--primary), 0.3);
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.linkSection p {
+  font-size: 0.85rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.75rem;
+}
+
+.linkBox {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.linkInput {
+  flex: 1;
+  background: hsla(var(--background), 0.8);
+  border: 1px solid hsla(var(--border), 0.5);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  color: hsl(var(--primary));
+  font-family: monospace;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.copyBtn {
+  background: hsla(var(--foreground), 0.05);
+  border: 1px solid hsla(var(--border), 0.5);
+  padding: 0 1rem;
+  border-radius: 8px;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.copyBtn:hover {
+  background: hsla(var(--foreground), 0.1);
+}
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .previewContainer {
+    order: -1;
+  }
+}

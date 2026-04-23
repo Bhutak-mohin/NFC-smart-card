@@ -1,0 +1,255 @@
+.profilePage {
+  min-height: 100vh;
+  padding: 120px 0 60px;
+  background: radial-gradient(circle at top right, hsla(var(--primary), 0.1), transparent 40%),
+              radial-gradient(circle at bottom left, hsla(var(--primary), 0.05), transparent 40%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tapNotification {
+  background: #10b981;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.4);
+  position: relative;
+}
+
+.tapRipple {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  animation: ripple 1.5s infinite;
+}
+
+@keyframes ripple {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
+}
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  padding: 0 1.5rem;
+}
+
+.card {
+  padding: 2.5rem;
+  text-align: center;
+  border-radius: 24px;
+}
+
+.header {
+  margin-bottom: 2rem;
+}
+
+.avatarWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  padding: 4px;
+  background: linear-gradient(135deg, hsl(var(--primary)), #60a5fa);
+}
+
+.mockAvatar {
+  width: 100%;
+  height: 100%;
+  background: #1a1a1a;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: hsl(var(--primary));
+}
+
+.name {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.role {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.8rem;
+}
+
+.bio {
+  color: hsl(var(--foreground));
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0.8;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.mainAction {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border: none;
+  padding: 0.875rem;
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.mainAction:hover {
+  transform: translateY(-2px);
+}
+
+.subActions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.iconAction {
+  flex: 1;
+  background: hsla(var(--foreground), 0.05);
+  border: 1px solid hsla(var(--border), 0.5);
+  color: hsl(var(--foreground));
+  padding: 0.75rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.iconAction:hover {
+  background: hsla(var(--foreground), 0.1);
+}
+
+.socialGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.socialItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: hsla(var(--foreground), 0.04);
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  border: 1px solid hsla(var(--border), 0.25);
+  color: hsl(var(--foreground));
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  position: relative;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.socialItem::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--social-color);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  border-radius: inherit;
+}
+
+.socialItem:hover::before {
+  opacity: 0.07;
+}
+
+.socialItem:hover {
+  border-color: var(--social-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -6px var(--social-color);
+}
+
+.socialIconBadge {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: var(--social-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.socialIconBadge svg {
+  color: #fff;
+}
+
+.socialTextBlock {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+}
+
+.socialPlatformLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  opacity: 0.5;
+  line-height: 1;
+  margin-bottom: 2px;
+}
+
+.socialHandle {
+  font-size: 0.82rem;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.externalIcon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0.25;
+  z-index: 1;
+}
+
+.footer {
+  padding-top: 1.5rem;
+  border-top: 1px solid hsla(var(--border), 0.5);
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}

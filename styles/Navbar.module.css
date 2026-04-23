@@ -1,0 +1,133 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: hsla(var(--background), 0.8);
+  backdrop-filter: blur(12px);
+  z-index: 100;
+  border-bottom: 1px solid hsla(var(--border), 0.5);
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: hsl(var(--foreground));
+}
+
+.icon {
+  color: hsl(var(--primary));
+}
+
+.logo span span {
+  color: hsl(var(--primary));
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: hsl(var(--muted-foreground));
+  transition: color 0.2s;
+}
+
+.links a:hover {
+  color: hsl(var(--foreground));
+}
+
+.cta {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground)) !important;
+  padding: 0.5rem 1.25rem;
+  border-radius: 99px;
+  font-weight: 600 !important;
+  transition: transform 0.2s, background 0.2s !important;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.authLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loginBtn {
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  transition: opacity 0.2s;
+}
+
+.loginBtn:hover {
+  opacity: 0.8;
+}
+
+.logoutBtn {
+  background: hsla(var(--foreground), 0.05);
+  border: 1px solid hsla(var(--border), 0.5);
+  color: hsl(var(--foreground));
+  padding: 0.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.logoutBtn:hover {
+  background: hsla(var(--primary), 0.1);
+  color: hsl(var(--primary));
+  border-color: hsla(var(--primary), 0.2);
+}
+
+
+.mobileMenu {
+  display: none;
+  background: none;
+  border: none;
+  color: hsl(var(--foreground));
+  cursor: pointer;
+}
+
+.mobileLinks {
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  background: hsl(var(--background));
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-bottom: 1px solid hsla(var(--border), 0.5);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .links {
+    display: none;
+  }
+  .mobileMenu {
+    display: block;
+  }
+}
