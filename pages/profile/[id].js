@@ -4,9 +4,9 @@ import { doc, getDoc } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { motion } from 'framer-motion';
 import { 
-  Instagram, Linkedin, Twitter, Github, Youtube,
   Mail, Phone, Download, MapPin, ExternalLink, Loader2, Globe, Briefcase
 } from 'lucide-react';
+import { FaInstagram as Instagram, FaLinkedin as Linkedin, FaTwitter as Twitter, FaGithub as Github, FaYoutube as Youtube } from 'react-icons/fa';
 import styles from '@/styles/Profile.module.css';
 import hStyles from '@/styles/Hero.module.css';
 

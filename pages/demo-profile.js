@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { 
-  Instagram, Linkedin, Twitter, Github, 
   Mail, Phone, Download, MapPin, ExternalLink 
 } from 'lucide-react';
+import { FaInstagram as Instagram, FaLinkedin as Linkedin, FaTwitter as Twitter, FaGithub as Github } from 'react-icons/fa';
 import styles from '@/styles/Profile.module.css';
 import hStyles from '@/styles/Hero.module.css'; // For patterns
 import { useNFCData } from '@/hooks/useNFCData';
