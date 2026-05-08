@@ -108,12 +108,19 @@ export default function PublicProfile() {
 
   // VCard generation function for "Save Contact" functionality
   const handleSaveContact = () => {
-    const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;${profile.name};;;\nFN:${profile.name}\nTITLE:${profile.role}\nNOTE:${profile.bio}\nTEL;TYPE=WORK,VOICE:${profile.phone || ''}\nEMAIL;TYPE=WORK:${profile.email || ''}\nURL:${window.location.href}\nEND:VCARD`;
+    let vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;${profile.name || ''};;;\nFN:${profile.name || ''}\n`;
+    if (profile.role) vcard += `TITLE:${profile.role}\n`;
+    if (profile.bio) vcard += `NOTE:${profile.bio}\n`;
+    if (profile.phone) vcard += `TEL;TYPE=CELL:${profile.phone}\n`;
+    if (profile.email) vcard += `EMAIL;TYPE=WORK:${profile.email}\n`;
+    if (profile.customLinks?.website) vcard += `URL:${profile.customLinks.website}\n`;
+    vcard += `URL:${window.location.href}\nEND:VCARD`;
+
     const blob = new Blob([vcard], { type: 'text/vcard;charset=utf-8' });
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = `${profile.name.replace(/\s+/g, '_')}_contact.vcf`;
+    link.download = `${(profile.name || 'contact').replace(/\s+/g, '_')}_contact.vcf`;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -228,18 +235,18 @@ export default function PublicProfile() {
           )}
 
           <div className={styles.actions}>
-            <button className={styles.mainAction} style={{ background: design.accentColor }} onClick={handleSaveContact}>
+            <button className={styles.mainAction} style={{ background: design.accentColor, color: design.buttonTextColor || '#ffffff' }} onClick={handleSaveContact}>
               <Download size={18} />
               Save Contact
             </button>
             <div className={styles.subActions}>
               {(profile.email) && (
-                <a href={`mailto:${profile.email}`} className={styles.iconAction} style={{ color: design.textColor, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <a href={`mailto:${profile.email}`} className={styles.iconAction} style={{ color: design.textColor, border: `1px solid ${design.textColor}44`, background: `${design.textColor}11`, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <Mail size={20} />
                 </a>
               )}
               {(profile.phone) && (
-                <a href={`tel:${profile.phone}`} className={styles.iconAction} style={{ color: design.textColor, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                <a href={`tel:${profile.phone}`} className={styles.iconAction} style={{ color: design.textColor, border: `1px solid ${design.textColor}44`, background: `${design.textColor}11`, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                   <Phone size={20} />
                 </a>
               )}

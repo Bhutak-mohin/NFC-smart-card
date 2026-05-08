@@ -141,7 +141,7 @@
   flex: 1;
   background: hsla(var(--foreground), 0.05);
   border: 1px solid hsla(var(--border), 0.5);
-  color: hsl(var(--foreground));
+  color: inherit;
   padding: 0.75rem;
   border-radius: 12px;
   cursor: pointer;
@@ -167,7 +167,7 @@
   padding: 0.75rem 1rem;
   border-radius: 14px;
   border: 1px solid hsla(var(--border), 0.25);
-  color: hsl(var(--foreground));
+  color: inherit;
   font-size: 0.85rem;
   font-weight: 500;
   transition: all 0.2s ease;
@@ -249,7 +249,8 @@
 
 .footer {
   padding-top: 1.5rem;
-  border-top: 1px solid hsla(var(--border), 0.5);
+  border-top: 1px solid currentColor;
   font-size: 0.75rem;
-  color: hsl(var(--muted-foreground));
+  color: inherit;
+  opacity: 0.5;
 }

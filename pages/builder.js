@@ -84,7 +84,19 @@ export default function Builder() {
               </div>
               <div className={styles.inputGroup}>
                 <label>Location</label>
-                <input name="location" value={formData.location} onChange={handleChange} placeholder="New York, NY" />
+                <input name="location" value={formData.location || ''} onChange={handleChange} placeholder="New York, NY" />
+              </div>
+            </div>
+
+            <div className={styles.section}>
+              <h3><SafeIcon name="Phone" /> Contact Information</h3>
+              <div className={styles.inputGroup}>
+                <label>Email Address</label>
+                <input type="email" name="email" value={formData.email || ''} onChange={handleChange} placeholder="john@example.com" />
+              </div>
+              <div className={styles.inputGroup}>
+                <label>Phone Number</label>
+                <input type="tel" name="phone" value={formData.phone || ''} onChange={handleChange} placeholder="+1 234 567 8900" />
               </div>
             </div>
 
@@ -166,7 +178,8 @@ export default function Builder() {
                           accentColor: t.accentColor,
                           fontFamily: t.fontFamily,
                           alignment: t.alignment,
-                          decorations: t.decorations
+                          decorations: t.decorations,
+                          buttonTextColor: t.buttonTextColor
                         }));
                       }}
                       style={{
